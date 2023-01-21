@@ -47,4 +47,4 @@ const logOut = () => {
 <template>
     <button v-if="isLoggedIn" @click="logOut">sign out</button>
     <button v-else @click="logIn">sign in</button>
-</template>
+</template>``
