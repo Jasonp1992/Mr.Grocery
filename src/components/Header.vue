@@ -1,6 +1,8 @@
 <script setup>
     import AddTodo from './AddTodo.vue';
     import { ref } from "vue";
+    import SignIn from "./SignIn.vue"
+    import LoggedInMessage from './LoggedInMessage.vue';
 
     let showAdd = ref(false)
 
@@ -10,10 +12,16 @@
 </script>
 
 <template>
-    <div id="header" class="h-18">
-        <h1 class="header-title text-red">Todo List</h1>
-        <p @click="handleShowAdd">Add Todo</p>
-        <AddTodo v-show="showAdd"/>
+    <div id="header" class="h-20 flex flex-row">
+        <div class="flex-1 flex flex-row gap-2 item-center">
+            <h1 class="header-title text-red">Todo List</h1>
+            <p @click="handleShowAdd">Add Todo</p>
+            <AddTodo v-show="showAdd"/>
+        </div>
+        <div>
+            <LoggedInMessage />
+            <SignIn />
+        </div>
     </div>
 </template>
 
