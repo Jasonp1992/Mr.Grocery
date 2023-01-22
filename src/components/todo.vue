@@ -1,13 +1,30 @@
 <script setup>
   import { ref, onMounted } from 'vue';
-  import { db } from '../firebase/index'
-  import { collection, onSnapshot } from "firebase/firestore"; 
+  import { db, auth } from '../firebase/index'
+  import { collection, onSnapshot, query, where } from "firebase/firestore"; 
   import DeleteTodo from './DeleteTodo.vue';
 
   let todos = ref([])
 
-  onMounted(async () => {
-    onSnapshot(collection(db, "todos"), (querySnapshot) => {
+  // onMounted(async () => {
+  //   const q = query(collection(db, "todos"), where("userId", "==", `${auth.currentUser.uid}`));
+  //   onSnapshot(q, (querySnapshot) => {
+  //     const fbTodos = [];
+  //     querySnapshot.forEach((doc) => {
+  //         const todo = {
+  //           id: doc.id,
+  //           content: doc.data().content
+  //         }
+  //         fbTodos.push(todo);
+  //     });
+  //     todos.value = fbTodos
+  //   });
+  // })
+
+  auth.onAuthStateChanged(function(user) {
+    if (user) {
+      const q = query(collection(db, "todos"), where("userId", "==", `${auth.currentUser.uid}`));
+    onSnapshot(q, (querySnapshot) => {
       const fbTodos = [];
       querySnapshot.forEach((doc) => {
           const todo = {
@@ -18,7 +35,10 @@
       });
       todos.value = fbTodos
     });
-  })
+    } else {
+      todos.value = []
+    }
+})
 
 </script>
 

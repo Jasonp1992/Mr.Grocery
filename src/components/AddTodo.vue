@@ -1,15 +1,14 @@
 <script setup>
     import { ref } from "vue"
     import { collection, addDoc } from "firebase/firestore"; 
-    import { db } from '../firebase/index'
+    import { db, auth } from '../firebase/index'
 
     let todoInput = ref("")
 
     const addToDb = async() => {
     try {
-      await addDoc(collection(db, "todos"), {
-        content: todoInput.value
-      });
+      const userDoc = collection(db, `todos`)
+      await addDoc(userDoc, { userId: auth.currentUser.uid, content: todoInput.value })
       todoInput.value = ""
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -19,8 +18,7 @@
 
 <template>
     <form @submit.prevent="addToDb">
-        <label>New Todo Item</label>
-        <br />
+
         <input class="text-black" type="text" v-model="todoInput" />
     </form>
 </template>
@@ -28,3 +26,7 @@
 <style>
 
 </style>
+addDoc(collection(db, "cities"), {
+  name: "Tokyo",
+  country: "Japan"
+});
