@@ -4,7 +4,7 @@
     const props = defineProps(['itemId'])
 
     const handleDelete = async () => {
-        await deleteDoc(doc(db, "todos", props.itemId))
+        await deleteDoc(doc(db, "shoppingList", props.itemId))
     }
 </script>
 

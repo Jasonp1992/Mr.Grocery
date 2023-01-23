@@ -6,8 +6,10 @@
 
 <template>
   <Header />
-  <todo />
-  <RouterView></RouterView>
+  <div class="flex justify-center">
+    <RouterView></RouterView>
+    <todo class="min-w-max"/>
+  </div>
   <Footer />
 </template>
 

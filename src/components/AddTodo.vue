@@ -5,9 +5,9 @@
 
     let todoInput = ref("")
 
-    const addToDb = async() => {
+  const addToDb = async() => {
     try {
-      const userDoc = collection(db, `todos`)
+      const userDoc = collection(db, `shoppingList`)
       await addDoc(userDoc, { userId: auth.currentUser.uid, content: todoInput.value })
       todoInput.value = ""
     } catch (e) {
