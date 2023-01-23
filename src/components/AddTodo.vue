@@ -8,7 +8,7 @@
   const addToDb = async() => {
     try {
       const userDoc = collection(db, `shoppingList`)
-      await addDoc(userDoc, { userId: auth.currentUser.uid, content: todoInput.value })
+      await addDoc(userDoc, { userId: auth.currentUser.uid, content: todoInput.value, active: false })
       todoInput.value = ""
     } catch (e) {
       console.error("Error adding document: ", e);

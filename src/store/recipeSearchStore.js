@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
-const ApiKey = import.meta.env.VITE_SPOON_API_KEY;
+const ApiKey = import.meta.env.VITE_PROTON_API_KEY;
 
 export const useRecipeSearchStore = defineStore("recipeSearch", {
   state: () => ({
@@ -27,13 +27,13 @@ export const useRecipeSearchStore = defineStore("recipeSearch", {
       );
       this.recipe = data;
     },
-    async getRecipeInstruction(recipeId) {
-      const { data } = axios.get(
-        "https://api.spoonacular.com/recipes/324694/analyzedInstructions?apiKey=a8557f703b894e18bdf9059027bba2a5"
-        // `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=${ApiKey}`
-      );
-      this.instructions = data;
-    },
+    // async getRecipeInstruction(recipeId) {
+    //   const { data } = axios.get(
+    //     "https://api.spoonacular.com/recipes/324694/analyzedInstructions?apiKey=a8557f703b894e18bdf9059027bba2a5"
+    //     // `https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=${ApiKey}`
+    //   );
+    //   this.instructions = data;
+    // },
     setSearchItem(search) {
       this.searchItem = search;
     },
