@@ -14,8 +14,8 @@
 <template>
     <div id="header" class="h-20 flex flex-row">
         <div class="flex-1 flex flex-row gap-2 item-center">
-            <h1 class="header-title text-red">Todo List</h1>
-            <p @click="handleShowAdd">Add Todo</p>
+            <h1 class="text-2xl">Shopping List Maker</h1>
+            <button @click="handleShowAdd" class="hover:underline">Add To Shopping List</button>
             <AddTodo v-show="showAdd"/>
         </div>
         <div>

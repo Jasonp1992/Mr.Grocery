@@ -4,9 +4,9 @@
 
 <template>
     <div class="footer">
-        <h3>Todo App</h3>
-        <p>practice app by jason potvin</p>
-        <p> using vue for front end, firestore for back end</p>
+        <h3>Shopping List App</h3>
+        <p>Practice App by Jason Potvin</p>
+        <p>Using Vue for front end, Firestore for back end</p>
     </div>
 </template>
 

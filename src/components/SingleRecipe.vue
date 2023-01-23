@@ -22,7 +22,7 @@
 </script>
 
 <template>
-        <dic class="max-w-lg rounded overflow-hidden shadow-lg bg-gray-100 m-5 mt-14 h-max">
+        <dic class="max-w-lg rounded overflow-hidden shadow-lg bg-gray-100 m-5 mt-14 ml-40 h-max">
             <img :src=recipe.image class="w-full"/>
             <div class="m-8 text-black font-san">
                 <h2 class="border-b-2 border-gray-300 text-4xl text-center p-5">{{ recipe.title }}</h2>

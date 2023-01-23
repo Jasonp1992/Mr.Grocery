@@ -6,7 +6,7 @@
 
 <template>
   <Header />
-  <div class="flex justify-center">
+  <div class="flex justify-between">
     <RouterView></RouterView>
     <todo class="min-w-max"/>
   </div>
