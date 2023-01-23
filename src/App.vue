@@ -7,6 +7,7 @@
 <template>
   <Header />
   <todo />
+  <RouterView></RouterView>
   <Footer />
 </template>
 
