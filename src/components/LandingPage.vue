@@ -1,5 +1,6 @@
 <script setup>
     import Footer from "./Footer.vue"
+    import SignIn from "./SignIn.vue";
 
 </script>
 
@@ -10,9 +11,7 @@
                 Untitled Grocery App
             </h1>
             <!-- im going to need some feedback when clicked -->
-            <button class="bg-pretty-blue p-2 pl-4 pr-4 rounded-2xl drop-shadow-lg">
-                Log In
-            </button>
+            <SignIn />
         </nav>
         <section class="flex m-14 justify-around items-center gap-20">
             <section>
