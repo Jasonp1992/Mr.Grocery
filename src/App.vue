@@ -1,10 +1,8 @@
 <script setup>
-  import todo from "./components/todo.vue";
-  import Header from "./components/Header.vue";
-  import Footer from "./components/Footer.vue";
+  import HomePage from "./components/HomePage.vue";
   import LandingPage from "./components/LandingPage.vue";
   import { ref } from 'vue'
-  import { db, auth } from './firebase/index'
+  import { auth } from './firebase/index'
 
   let isLoggedIn = ref(true)
 
@@ -20,9 +18,7 @@
 </script>
 
 <template>
-  <Header v-if="isLoggedIn" />
+  <HomePage v-if="isLoggedIn" />
   <LandingPage v-else />
 </template>
 
-<style scoped>
-</style>
