@@ -26,7 +26,3 @@
 <style>
 
 </style>
-addDoc(collection(db, "cities"), {
-  name: "Tokyo",
-  country: "Japan"
-});
