@@ -1,23 +1,10 @@
 <script setup>
-import { ref } from 'vue'
 import { db, auth } from '../firebase/index'
 import {
   GoogleAuthProvider,
   signInWithPopup,
 } from 'firebase/auth';
 import { doc, setDoc } from "firebase/firestore"; 
-
-let isLoggedIn = ref(true)
-
-auth.onAuthStateChanged(function(user) {
-    if (user) {
-        isLoggedIn.value = true
-        console.log("logged in: ", auth)
-    } else {
-        isLoggedIn.value = false
-        console.log("logged out: ", auth)
-    }
-})
 
 const logIn = async () => {
   var provider = new GoogleAuthProvider();
@@ -38,16 +25,6 @@ const logIn = async () => {
         const email = error.customData.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
     })
-}
-
-const logOut = () => {
-    auth.signOut()
-        .then(function() {
-            console.log("Signed Out", auth)
-        })
-        .catch((error) => {
-            console.log("Sign Out Error", error)
-        })
 }
 </script>
 
