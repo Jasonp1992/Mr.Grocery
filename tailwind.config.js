@@ -5,12 +5,13 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "header-image":
-          "linear-gradient(0deg, rgba(9,121,83,1) 0%, rgba(0,255,118,0.11584230132450335) 89%), url('/public/img/grocery-cover.jpg')",
+        "search-image":
+          "linear-gradient(183deg, rgba(166,166,166,0.8057598039215687) 100%, rgba(166,166,166,1) 100%), url('/img/blackberries.jpg')",
       },
       colors: {
         "slick-gray": "#1E1F23",
         "pretty-blue": "#29ABC8",
+        "off-blue": "#D8FFFD",
       },
       spacing: {
         701: "700px",
@@ -27,6 +28,7 @@ module.exports = {
       },
       fontFamily: {
         "indie-flower": ["Indie Flower"],
+        "josefin-sans": ["Josefin Sans"],
       },
     },
   },
