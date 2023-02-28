@@ -1,36 +1,14 @@
 <script setup>
-    import AddTodo from './AddTodo.vue';
-    import { ref } from "vue";
-    import SignIn from "./SignIn.vue"
-    import LoggedInMessage from './LoggedInMessage.vue';
-
-    let showAdd = ref(false)
-
-    const handleShowAdd = () => {
-        showAdd.value = !showAdd.value
-    }
+    import LogOut from './LogOut.vue';
+    import { Bars3Icon } from "@heroicons/vue/24/outline";
 </script>
 
 <template>
-    <div id="header" class="h-20 flex flex-row">
-        <div class="flex-1 flex flex-row gap-2 item-center">
-            <h1 class="text-2xl">Shopping List Maker</h1>
-            <button @click="handleShowAdd" class="hover:underline">Add To Shopping List</button>
-            <AddTodo v-show="showAdd"/>
-        </div>
+    <header class="bg-slick-gray h-14 flex justify-between items-center pr-2 pl-2">
         <div>
-            <LoggedInMessage />
-            <SignIn />
+            <Bars3Icon class="h-6 w-6 text-gray-300 inline mr-2" />
+            <h1 class="font-indie-flower text-2xl inline">Untitled Grocery App</h1>
         </div>
-    </div>
+        <logOut />
+    </header>        
 </template>
-
-<style>
-    #header {
-        display: flex;
-        gap: 20px;
-        padding: 10px;
-        background-color: rgba(147, 219, 195, 0.727);
-        align-items: center;
-        }
-</style>
