@@ -52,6 +52,5 @@ const logOut = () => {
 </script>
 
 <template>
-    <button v-if="isLoggedIn" @click="logOut">sign out</button>
-    <button v-else @click="logIn">sign in</button>
+    <button class="bg-pretty-blue p-2 pl-4 pr-4 rounded-2xl drop-shadow-lg" @click="logIn">Log In</button>
 </template>``
